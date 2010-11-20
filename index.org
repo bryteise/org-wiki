@@ -41,9 +41,9 @@ publishing, look at
 http://mmonit.com/wiki/Monit/ConfigurationExamples#cron
 
 ** Other main pages
-[[kernel.org][Kernel dev info]]
-[[clojure.org][Clojure development]]
-[[c.org][Random C/C++ work and findings]]
-[[sys-admin.org][System Admin]]
+[[file:kernel.org][Kernel dev]]
+[[file:clojure.org][Clojure dev]]
+[[file:c.org][C/C++ dev]]
+[[file:sys-admin.org][System Admin]]
 ** Todo
 Get site css setup to look not ugly.  Try and use the worg site as a template

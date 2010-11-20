@@ -1,0 +1,11 @@
+* Clojure
+** current projects
+*** tcp chat with aleph
+https://github.com/ztellman/aleph
+http://dosync.posterous.com/clojure-multi-core-amazon-cluster-compute-lat
+
+Are my two links of inspiration.  Have a minor code base made so far.
+Working on dealing with the mutable object to represent the list of
+clients connected to the "room"
+*** stock data mining
+Doing a reset of this.  Going to try and figure out how to gather data better.

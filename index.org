@@ -1,0 +1,47 @@
+* William's wiki
+
+** General info on site setup
+Complete (not syncing to exact web folder yet though) 
+>First: 
+>Using http://troy.jdmz.net/rsync/index.html as a guide, get local
+wd-workstation folder syncing to web-server folder. 
+
+Complete (didn't use guide given at tumblr, used
+http://wiki.archlinux.org/index.php/Nginx instead for getting nginx
+installed and working). 
+>Intermediary: 
+>Get web page loading with nginx 
+>(see this guide
+http://tumblr.intranation.com/post/766288369/using-nginx-reverse-proxy,
+also has information for second part of task) 
+
+Complete (ended up using Russell's setup as a bit of a guide, though
+can't do the name.bryteise.homeip.net because I don't have dynamic
+domains configured with dyndns) 
+>Second: 
+>Setup nginx to reverse proxy on web-server, setup port forwarding on
+routers 42000to nginx. 
+>Try to configure nginx use name.bryteise.homeip.net to decide which
+server to go to. 
+
+Complete (updated task to split into 3a and 3b) 
+>Third A: 
+>Configure org setup to publish projects using
+http://orgmode.org/worg/worg-setup.php. 
+
+Complete (cron jobs running) 
+
+>Third B: 
+>Configure cron job so the whole thing is automated using git to pull
+>updates on a timely fashion. 
+
+Removed: (made own task for a deeper dive) 
+Fourth: 
+Get monitoring working for the cron job doing both the syncing and the
+publishing, look at
+http://mmonit.com/wiki/Monit/ConfigurationExamples#cron
+
+** Other main pages
+[[kernel.org][Kernel dev info]]
+[[clojure.org][Clojure development]]
+[[c.org][Random C/C++ work and findings]]

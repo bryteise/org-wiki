@@ -1,0 +1,8 @@
+* System Administration
+** Job monitoring
+http://news.ycombinator.com/item?id=1905991
+http://www.cyberciti.biz/tips/top-linux-monitoring-tools.html
+
+Good start, can also take a look at the repo.or.cz monitoring that was
+setup.
+** repo.or.cz hosting

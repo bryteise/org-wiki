@@ -1,0 +1,9 @@
+* Meego Dev
+** Getting Meego image creator setup
+follow instructions here:
+http://wiki.meego.com/Image_Creation#Requirements
+Using
+sudo mic-image-creator --config=meego.ks --format=livecd --cache=mycache
+to create the image but having issues with hd running out of space
+since it is caching things on the primary hd.  Looking into how to set
+that directory in the image creator.

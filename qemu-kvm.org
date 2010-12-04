@@ -1,0 +1,47 @@
+* qemu-kvm
+** Ubuntu
+https://help.ubuntu.com/community/KVM/
+*** Install
+sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder
+bridge-utils virt-manager libcap2-bin qemu
+After the installation, you need to relogin so that your user becomes
+an effective member of the libvirtd group. The members of this group
+can run virtual machines.
+*** Configuration
+**** Network
+Give qemu the inheritable CAP_NET_ADMIN capability:
+sudo setcap cap_net_admin=ei /usr/bin/qemu-system-*
+Allow specific users to gain the inheritable CAP_NET_ADMIN capability
+by editing /etc/security/capability.conf:
+cap_net_admin        USER-NAME-HERE
+First stop networking:
+sudo invoke-rc.d networking stop
+To set up a bridge interface, edit /etc/network/interfaces and either
+comment or replace the existing config with (for DHCP):
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet manual
+
+auto br0
+iface br0 inet dhcp
+        bridge_ports eth0
+        bridge_stp off
+        bridge_fd 0
+        bridge_maxwait 0
+
+Now restart networking:
+sudo /etc/init.d/networking restart
+**** Create VM
+http://libvirt.org/
+http://manpages.ubuntu.com/manpages/maverick/man1/virsh.1.html
+http://www.techotopia.com/index.php/Installing_and_Configuring_Fedora_KVM_Virtualization
+
+I find using virt-manager to create initial install and dumpxml in virsh to
+make new VMs is easier.  Customizing after initial xml export seems
+more manageable as well.
+
+Using the virt-manager to create new storage pools and virtual drives
+(that can be dumped to xml and configured or duplicated) is also
+easy.

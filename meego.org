@@ -1,9 +1,20 @@
 * Meego Dev
+** Reading list
+http://conference2010.meego.com/sites/all/files/sessions/meego_learning_from_mistakes.pdf
+http://meego.com/about/compliance-program
+http://wiki.meego.com/Quality/Compliance
+http://meego.com/search/node/compliance
 ** Getting Meego image creator setup
 follow instructions here:
 http://wiki.meego.com/Image_Creation#Requirements
 Using
 sudo mic-image-creator --config=meego.ks --format=livecd --cache=mycache
 to create the image but having issues with hd running out of space
-since it is caching things on the primary hd.  Looking into how to set
-that directory in the image creator.
+since it is caching things on the primary hd.
+Attempted to update the ks file to use a different caching directory
+but found it would still fail to build referencing a temp directory in
+var it wanted to use but couldn't find.
+Moved to working on KVM and was able to build after allocating enough
+space for the drive.
+Trying to install the image on a VM in KVM was unsuccessful.  Need to
+look into meego on KVM.

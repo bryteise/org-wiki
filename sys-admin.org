@@ -6,3 +6,10 @@ http://www.cyberciti.biz/tips/top-linux-monitoring-tools.html
 Good start, can also take a look at the repo.or.cz monitoring that was
 setup.
 ** repo.or.cz hosting
+** arch
+** fedora
+*** service start up
+http://linuxcommand.org/man_pages/chkconfig8.html
+command use to manage links to the rc[0-6].d directories
+** ubuntu
+** meego

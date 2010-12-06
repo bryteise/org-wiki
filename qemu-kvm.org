@@ -45,3 +45,9 @@ more manageable as well.
 Using the virt-manager to create new storage pools and virtual drives
 (that can be dumped to xml and configured or duplicated) is also
 easy.
+(note dumping images to xml uses the following command, where wdouglas
+is the pool and general-dev.img is the image file name)
+virsh vol-dumpxml --pool wdouglas general-dev.img
+**** Clone VM
+http://www.mythicalbeast.co.uk/linux/kvm_howto.html#Making%20Copies%20or%20Cloning%20Existing%20Machines
+sudo virt-clone -o kvmubuntu -n kvmhardy -f /data/Virtual_machines/kvmhardy/kvmhardy.img

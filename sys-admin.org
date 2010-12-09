@@ -13,3 +13,30 @@ http://linuxcommand.org/man_pages/chkconfig8.html
 command use to manage links to the rc[0-6].d directories
 ** ubuntu
 ** meego
+** work proxy
+*** git
+from
+http://opensource.intel.com/linux-wiki/LinuxDesktop#head-5821e8deb4a31049ba106f03fe38466934698438
+
+export GIT_PROXY_COMMAND=`echo ~`/bin/git-proxy"
+
+bin/git-proxy
+#!/bin/bash
+PROXY=proxy-socks.jf.intel.com
+PORT=1080
+case $1 in
+        # list git servers INTERNAL to intel here that you do not want to use
+        # a proxy for, separated by a pipe character '|' as below
+git.moblin.org|gitexample.intel.com)
+        METHOD="-X connect"
+        ;;
+*)
+        METHOD="-X 5 -x ${PROXY}:${PORT}"
+        ;;
+esac
+/usr/bin/nc $METHOD $*
+*** ssh
+.ssh/config
+proxycommand nc -x proxy-socks.jf.intel.com:1080 -X 5 %h %p
+*** http
+*** email

@@ -40,3 +40,25 @@ esac
 proxycommand nc -x proxy-socks.jf.intel.com:1080 -X 5 %h %p
 *** http
 *** email
+** one liners
+*** sed
+Remove the 3rd line:
+sed '3d' fileName.txt
+
+Removal of the line containing the string "awk":
+sed '/awk/d' filename.txt
+
+Remove the last line:
+sed '$d' filename.txt
+
+Remove all empty lines:
+sed '/^$/d' filename.txt
+sed '/./!d' filename.txt
+
+Removing the interval between lines 7 and 9.
+sed '7,9d' filename.txt
+
+For permanent changes to the old versions (<4) use a temporary file for GNU sed use the "-i[suffix]":
+sed -i".bak" '3d' filename.txt
+*** awk
+http://www.catonmat.net/blog/wp-content/uploads/2008/09/awk1line.txt

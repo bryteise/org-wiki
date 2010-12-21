@@ -1,4 +1,57 @@
 * qemu-kvm
+** Fedora
+*** Install
+Works the same as the Ubuntu install below
+*** Configuration
+**** Netowrk
+http://fedoraunity.org/Members/kc8hfi/qemu-kvm-bridged-networking
+su
+yum install bridge-utils tunctl libvirt qemu-kvm
+service NetworkManager stop
+chkconfig NetworkManager off
+chkconfig network on
+brctl addbr br0
+
+create
+/etc/sysconfig/network-scripts/ifcfg-br0
+# Networking Interface
+DEVICE=br0
+ONBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Bridge
+USERCTL=yes
+NM_CONTROLLED=no
+IPV6INIT=no
+NAME="bridge"
+PEERNTP=yes
+
+edit
+/etc/sysconfig/network-scripts/ifcfg-eth0
+NM_CONTROLLED=no
+BRIDGE=br0
+
+edit
+/etc/rc.d/rc.local
+#substitute tap0, br0, username to whatever your information is
+interface="tap0"
+bridge="br0"
+username=”<your username>”
+#add a tap interface owned by your user
+tunctl -u $username -t $interface
+#add this interface to the bridge
+brctl addif $bridge $interface
+#bring the interface up
+ifconfig $interface up
+
+groupadd kvm
+usermod -a -G kvm <your username>
+
+Create a file in the directory /etc/udev/rules.d called 99-kvm.rules.
+Add the following to that file:
+KERNEL=="kvm",MODE="0660",GROUP="kvm"
+
+service libvirtd restart
+service network restart
 ** Ubuntu
 https://help.ubuntu.com/community/KVM/
 *** Install

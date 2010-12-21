@@ -18,3 +18,8 @@ Moved to working on KVM and was able to build after allocating enough
 space for the drive.
 Trying to install the image on a VM in KVM was unsuccessful.  Need to
 look into meego on KVM.
+** Bugzilla
+http://bugs.meego.com
+deskzilla works with this repo nicely, thanks Ryan
+** Git repo
+http://meego.gitorious.org

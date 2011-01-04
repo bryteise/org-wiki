@@ -3,3 +3,7 @@
 ** the C programming language
 ** data structures
 ** Thinking in C++
+* CTAGS
+** generate ETAGS
+http://www.emacswiki.org/emacs/BuildTags
+great resource for making tags.  Added create-tags function to emacs.

@@ -8,6 +8,8 @@ setup.
 ** repo.or.cz hosting
 ** arch
 ** fedora
+*** find installed package related to file
+rpm -qf /path/to/file
 *** service start up
 http://linuxcommand.org/man_pages/chkconfig8.html
 command use to manage links to the rc[0-6].d directories

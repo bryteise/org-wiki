@@ -3,6 +3,18 @@
 ** the C programming language
 ** data structures
 ** Thinking in C++
+** pre-processor
+Get file contents after preprocessor is done
+
+new:
+make full/path/to/file.i
+
+old:
+make V=1  file/to/foo.o
+gives you the full gcc command line from the makefile
+
+then add the -E flag, which instead of a binary, makes it spit out the
+content of the .c file after the preprocessor is done....
 * CTAGS
 ** generate ETAGS
 http://www.emacswiki.org/emacs/BuildTags

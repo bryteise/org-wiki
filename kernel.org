@@ -1,2 +1,15 @@
 * Linux Kernel Dev
 ** Building a kernel on arch
+** ioctl
+*** calling from userspace
+man 2 ioctl
+
+Usage is ioctl(int file_descriptor, int request_id, ...)
+file_descriptor can be return from open() call
+
+Figuring out request_id is from fs/nm/ioctl.h
+Need to get which function id is being used by looking at strace
+Then match id to function symbol usually in fs/nm/ioctl.c and find the
+appropriate way the header generates the id (maybe using _IOW)
+
+rest copied from userspace using copy_from_user function

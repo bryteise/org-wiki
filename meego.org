@@ -1,4 +1,8 @@
 * Meego Dev
+** Fresh install
+*** extra utils
+zypper install the following:
+git osc openssh-server zsh emacs mic2 man man-pages
 ** Reading list
 http://conference2010.meego.com/sites/all/files/sessions/meego_learning_from_mistakes.pdf
 http://meego.com/about/compliance-program

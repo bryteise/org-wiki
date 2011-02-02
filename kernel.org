@@ -1,5 +1,18 @@
 * Linux Kernel Dev
 ** Building a kernel on arch
+https://wiki.archlinux.org/index.php/Kernel_Compilation_From_Source
+** modules
+*** compilation
+If your kernel source tree is located in, say, your ~/kernel-2.6
+directory, the make command required to build your module
+(typed in the directory containing the module source and makefile)
+would be:
+make -C ~/kernel-2.6 M=`pwd` modules
+
+(-C switches directory before starting build process/looking at
+makefiles)
+(M= is used in the kernel's makefile to specify the directory of
+an external module to build)
 ** ioctl
 *** calling from userspace
 man 2 ioctl

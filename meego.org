@@ -2,7 +2,8 @@
 ** Fresh install
 *** extra utils
 zypper install the following:
-git osc openssh-server zsh emacs mic2 man man-pages
+git osc openssh-server zsh emacs mic2 man man-pages gcc binutils make
+spectacle gettext curl-devel libnotify-devel valgrind ctags nc gcc
 ** Reading list
 http://conference2010.meego.com/sites/all/files/sessions/meego_learning_from_mistakes.pdf
 http://meego.com/about/compliance-program
@@ -27,3 +28,35 @@ http://bugs.meego.com
 deskzilla works with this repo nicely, thanks Ryan
 ** Git repo
 http://meego.gitorious.org
+
+** rpm stuff
+*** hacking on src rpms and extracting their innards
+> I have Meego 1.1 on a netbook and with kernel 2.6.35.3.10.3-netbook.
+> I need to re-compile the kernel to turn on deadline IO.   Via zypper, I
+> installed kernel-netbook and kernel-netbook-devel.   kernel-headers are
+> already installed.
+>
+No, you need to:
+ $ sudo zypper si kernel-netbook
+Then the .src.rpm will be in $HOME/rpmbuild/SRPMS/
+To unpack the .src.rpm to a folder so that you can change the config,
+you'll need to do something like:
+
+ $ mkdir sandbox/
+ $ cd sandbox/
+ $ rpm2cpio /path/to/kernel.src.rpm | cpio -id --no-absolute-filenames
+
+This will unpack all the patches, .spec files, and tarballs into the
+current directory.
+
+From here, what you want to do depends on whether or not you want to
+package your work.  My suggestion is to:
+
+ 1. Unpack the tarball.
+ 2. Patch the tarball using quilt
+ 3. Borrow the config file from a kernel that's close.
+ 4. make menuconfig
+ 5. make && make modules_install && make install
+ 6. If !satisfied GOTO 4
+
+After that, you can worry about creating an RPM.

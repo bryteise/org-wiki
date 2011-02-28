@@ -1,6 +1,20 @@
 * Linux Kernel Dev
-** Building a kernel on arch
+** Building on arch
 https://wiki.archlinux.org/index.php/Kernel_Compilation_From_Source
+** building on meego
+*** from obs
+**** quilt
+copy series and .patches to linux-2.6.XX/patches
+quilt push
+**** oldconfig
+make mrproper
+copy /boot/config-X to linux-2.6.XX/.config
+make oldconfig
+**** compile
+make && make modules
+su
+make modules_install && make install
+*** from vanilla
 ** modules
 *** compilation
 If your kernel source tree is located in, say, your ~/kernel-2.6

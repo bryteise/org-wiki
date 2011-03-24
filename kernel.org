@@ -27,6 +27,13 @@ make -C ~/kernel-2.6 M=`pwd` modules
 makefiles)
 (M= is used in the kernel's makefile to specify the directory of
 an external module to build)
+** backtraces
+For grabbing kernel backtraces:
+
+$ sudo -s
+# dmesg -c >/dev/null
+# echo t >/proc/sysrq-trigger
+# dmesg >backtraces.txt
 ** ioctl
 *** calling from userspace
 man 2 ioctl

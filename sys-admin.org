@@ -64,3 +64,48 @@ For permanent changes to the old versions (<4) use a temporary file for GNU sed 
 sed -i".bak" '3d' filename.txt
 *** awk
 http://www.catonmat.net/blog/wp-content/uploads/2008/09/awk1line.txt
+** general *nix stuff
+*** Strings
+grep
+awk
+uniq, sort, sort -n
+seq
+cut
+wc
+*** Files
+rsync
+lsof
+find | xargs
+locate
+df -H
+du -cks * | sort -n
+scp
+strings
+file
+touch
+z* (zgrep, zcat, etc)
+tail -f, head
+*** Administration
+man
+ps auxf (f only on GNU)
+kill, -HUP, -9
+sudo
+screen
+/etc/init.d/ scripts
+id
+^Z, fg, jobs, &
+*** Networking
+nmap
+dig
+tcpdump
+wget
+curl
+ifconfig
+*** Operators
+The knowledge that bash is a programming language that provides all your basic constructs (ifs, loops, variables, functions), but instead of having a library of functions, you execute simple programs instead
+|
+<, >, >>
+- as stdin, e.g. "cat somefile.txt | vi -"
+for i in a b c d; do echo $i; something_else $i; done
+alias
+All the goodies at http://samrowe.com/wordpress/advancing-in-the-bash-shell/

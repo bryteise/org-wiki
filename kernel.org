@@ -2,7 +2,7 @@
 ** Building on arch
 https://wiki.archlinux.org/index.php/Kernel_Compilation_From_Source
 ** building on meego
-*** from obs
+*** obs
 **** quilt
 copy series and .patches to linux-2.6.XX/patches
 quilt push
@@ -47,3 +47,13 @@ Then match id to function symbol usually in fs/nm/ioctl.c and find the
 appropriate way the header generates the id (maybe using _IOW)
 
 rest copied from userspace using copy_from_user function
+** kernel debug
+*** netconsole
+http://mindplusplus.wordpress.com/2010/03/06/using-netconsole-on-linux/
+http://sarah.thesharps.us/2009-02-22-09-00
+
+*** ITP
+In Target probe (need further research)
+*** kdump/kdb
+(need further research)
+*** ACPI "ERST"

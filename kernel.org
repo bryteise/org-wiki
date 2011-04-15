@@ -3,14 +3,20 @@
 https://wiki.archlinux.org/index.php/Kernel_Compilation_From_Source
 ** building on meego
 *** obs
-**** quilt
+**** build through obs
+https://www.nixuopen.org/blog/2010/11/developing-for-meego-part-2/
+**** build manual
+***** quilt
 copy series and .patches to linux-2.6.XX/patches
+if a patch for getting to 2.6.XX.Y needing to be applied
+cat patch-2.6.XX.Y | patch -p1
+then
 quilt push
-**** oldconfig
+***** oldconfig
 make mrproper
 copy /boot/config-X to linux-2.6.XX/.config
 make oldconfig
-**** compile
+***** compile
 make && make modules
 su
 make modules_install && make install

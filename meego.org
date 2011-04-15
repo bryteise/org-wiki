@@ -4,6 +4,7 @@
 zypper install the following:
 git osc openssh-server zsh emacs mic2 man man-pages gcc binutils make
 spectacle gettext curl-devel libnotify-devel valgrind ctags nc
+libtool vala libcap-devel docbook-xsl xsltproc automake autoconf
 ** Reading list
 http://conference2010.meego.com/sites/all/files/sessions/meego_learning_from_mistakes.pdf
 http://meego.com/about/compliance-program
